@@ -15,6 +15,8 @@ module.exports.search = (req,res) => {
 
 module.exports.postCreate = (req, res) => {
 	req.body.id = shortId.generate();
+	// req.body.avatar = req.file.path.split('\\').slice(1).join("\\");
+	req.body.avatar = req.file.path.split('\\').slice(1).join('\\');
 	db.get('users').push(req.body).write();
 	res.redirect('/users');
 }
