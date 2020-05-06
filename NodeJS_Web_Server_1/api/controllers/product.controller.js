@@ -1,8 +1,13 @@
 const Product = require('../../models/product.model');
 
 module.exports.index = async (req,res) => {
-	const products = await Product.find();
-	res.json(products);
+	try {
+		const products = await Product.find();
+		res.json(products);
+	} catch (error) {
+		
+	}
+	
 };
 
 module.exports.create = async (req,res) => {

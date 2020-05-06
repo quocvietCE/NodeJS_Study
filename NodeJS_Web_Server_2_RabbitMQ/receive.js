@@ -19,11 +19,11 @@ const port = 3002;
 // 		}, {noAck: true});
 		
 // 	});
-// 	//  
+//
 // })
 
-Step 1: npm install amqplib
-Step 2: Create file and pase Code below
+// Step 1: npm install amqplib
+// Step 2: Create file and pase Code below
 var amqp = require('amqplib/callback_api');
 amqp.connect('amqp://rabbitmq:s3cr3tc00ki3@qa.customer.cargopedia.success-ss.com.vn:5672/cargopedia', (err, connection) => {
 	connection.createChannel((err, channel) => {

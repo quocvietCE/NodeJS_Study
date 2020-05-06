@@ -20,8 +20,13 @@ module.exports.index = async (req,res) => {
 	// 	});
 	// });
 
-	const products = await Product.find();
-	res.render('products/index', {
-		products: products
-	});
+	try {
+		const products = await Product.find();
+		res.render('products/index', {
+			products: products
+		});
+	} catch(error) {
+		next(error)
+	}
+	
 };
